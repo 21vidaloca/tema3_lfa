@@ -49,12 +49,12 @@ print(siruri_generate)
 # task 3 - derivation
 print("task 3")
 
-def derivam():
+def derivam(nr_derivari, lista):
     contor=0
     ok=1
     st=[]
     st.append(stare_init)
-    while contor<5:
+    while contor<nr_derivari:
         if st == []:
             break
         sir=st[0]
@@ -85,9 +85,27 @@ def derivam():
             st.pop(0)
 
 lista=[]
-derivam()
+derivam(6,lista)
 print(lista)
 
 # task 4 - membership tester
+print("task 4")
+def testare(sir):
+    lista=[]
+    derivam(12,lista)
+    ok=0
+    print(lista)
+    for x in lista:
+        print(x[1],sir)
+        if(x[1] == sir):
+            ok=1
+            break
+        
+    if(ok):
+        print("True")
+    else:
+        print("False")
 
+
+testare("aaaaaaaaaaabbbbbbbbbbb")
 # task 5 - extend your cfg(bonus)
