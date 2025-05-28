@@ -86,8 +86,32 @@ def derivam(nr_derivari, lista):
 
 lista=[]
 derivam(6,lista)
+rez=[]
+ceva=0
+def dfs(sir, pereche):
+    global ceva
+    if("S" in pereche and ceva == 0):
+        ceva=1
+    for x in lista:
+        if(pereche[0] == x[1] and ceva == 0):
+            print(x, ceva)
+            dfs(sir,x)
+            print(x, ceva)
+            if(ceva == 1):
+                rez.append(x)
+                print(x)
 print(lista)
-
+sir_ch="aaaSbbb"
+for x in lista:
+    if(sir_ch == x[1]):
+        pereche_buna=x
+        break
+ceva=0
+dfs(sir_ch, pereche_buna)
+print(rez[0][0]+"->",end="")
+for x in rez:
+    print(x[1]+"->",end="")
+print(pereche_buna[1])
 # task 4 - membership tester
 print("task 4")
 def testare(sir):
@@ -107,5 +131,5 @@ def testare(sir):
         print("False")
 
 
-testare("aaaaaaaaaaabbbbbbbbbbb")
+# testare("aaaaaaaaaaabbbbbbbbbbb")
 # task 5 - extend your cfg(bonus)
